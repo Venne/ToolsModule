@@ -1,0 +1,9 @@
+<h1>{_"Tools"}</h1>
+
+<ul class="toolbar">
+
+	<li n:if="$presenter->isAllowed('Tools:Admin:Default:default')">
+		<a href="{link default}"{if $presenter->isLinkCurrent("default")} class="active"{/if}>Doctrine</a>
+	</li>
+
+</ul>

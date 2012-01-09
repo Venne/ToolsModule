@@ -41,12 +41,12 @@ class Module extends \Venne\Module\AutoModule {
 
 
 
-	public function configure(\Venne\DI\Container $container, \App\CoreModule\CmsManager $manager)
+	public function configure(\Nette\DI\Container $container, \App\CoreModule\CmsManager $manager)
 	{
 		parent::configure($container, $manager);
 
 		$manager->addService("entitiesGenerator", function() use ($container) {
-					return new EntitiesGeneratorService($container->doctrineContainer->entityManager, $container->doctrineContainer->schemaManager);
+					return new EntitiesGeneratorService($container->entityManager, $container->schemaManager);
 				});
 		$manager->addEventListener(array(\App\CoreModule\Events::onAdminMenu), $this);
 	}

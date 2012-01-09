@@ -28,7 +28,7 @@ class DefaultPresenter extends \Venne\Application\UI\AdminPresenter {
 
 	public function createComponentForm($name)
 	{
-		$form = new \App\ToolsModule\DoctrineForm($this->context->entitiesGeneratorService, $this->context->params["rootDir"]);
+		$form = new \App\ToolsModule\DoctrineForm($this->context->entitiesGeneratorService, $this->context->parameters["rootDir"]);
 		$form->setFlashMessage("Entities has been generated");
 		return $form;
 	}
